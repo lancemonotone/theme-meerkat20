@@ -1,0 +1,40 @@
+/**
+ * This file should contain styles that will be applied to
+ * all module instances within a builder layout.
+ */
+/*network header background with photo bg*/
+
+.fl-row-bg-photo .fl-module-network-header .network-header,
+.fl-row-bg-parallax .fl-module-network-header .network-header {
+  background-color: transparent;
+}
+
+/* temp nudge to match m16--remove once unified */
+.site-header .network-header .menu-toggle-featherlight{
+  right: -2px;
+}
+.site-header .wms-search .wms-navbox .wms-navbox-form .wms-icon-search {
+  right: -41px;
+}
+
+ .fl-module-network-header .network-header .wordmark{
+  left: 10px;
+}
+
+
+
+.fl-module-network-header .fl-module-content{
+  margin: 0;
+
+}
+
+/*********************
+TABLET 910
+*********************/
+@media only screen and (min-width: 910px) {
+  .fl-module-network-header .network-header .wordmark{
+    left: -1px;
+  }
+
+}
+

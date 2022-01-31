@@ -1,0 +1,67 @@
+
+    <a class="skip-link screen-reader-text" href="#content">{{ __('Skip to main content', 'twentysixteen' ) }}</a>
+    <div class="network-header {{ function('get_theme_mod', 'WMS_text_bug')? 'has-bug' }}">
+        <div class="outer-container">
+            <div class="inner-container">
+                <div class="wordmark">
+                    <a class="logo" href="{{ constant('WWW_BLOG_URL') }}" title="{{ __('Go to') }} Williams College Home" aria-flowto="wms-search-btn">
+                        {% include 'modules/svg.twig' with {
+                        'title':'Williams College',
+                        'viewbox':'0 0 828.9 135.9',
+                        'img_dir':constant('THEME_IMG_URL'),
+                        'url':'/wordmark_v4.svg',
+                        'symbol':'williams-logo',
+                        'png':'williams_wordmark_292_purple.png'
+                        } %}
+                    </a>
+                 {% if function('get_theme_mod', 'WMS_text_bug') %}
+                    <a class="dept-bug"  href="{{ site.url }}" rel="home" title="{{ __('Go to') }} {{ site.name }}">{{ function('get_theme_mod', 'WMS_text_bug')}}</a>
+                {% endif %}
+                </div>
+
+               
+
+                <span id="wms-search" class="wms-search" >
+                    {{ navbox_widget }}
+                </span>
+
+                   {% include 'widgets/button_menu-toggle.twig' with {
+                    'target'        : '#megaoverlay',
+                    'title'         : __('Menu'),
+                    'btn_id'        : 'menu-toggle-trigger',
+                    'tab_index'     : 4,
+                    'featherlight'  : '#megaoverlay',
+                    } %}
+
+            </div><!-- .inner-container -->
+        </div><!-- .outer-container -->
+    </div><!-- .network-header -->
+
+    <div  class="network-utility outer-container" id="megaoverlay"  aria-labelledby="menu-toggle-trigger" role = "application">
+        <div id="megaoverlay_desc" class="screen-reader-text">use tab and shift-tab to navigate once expanded</div>
+        <div class="network-utility-container inner-container" >
+
+            <div id="network-header-menu" class="network-header-menu">
+
+                {% include 'modules/navigation.twig' with {'nav_obj' : global_nav, 'menu_class' : 'global-navigation'} %}
+
+                <div id="featured-links-container">
+                    {% include 'modules/navigation.twig' with {'nav_obj' : featured_links_nav, 'menu_class' : 'featured-links'} %}
+                </div>
+
+                <div id="quicklinks-container" class="widget widget_nav_menu">
+                    {# Located in wp-content/lib/views #}
+                    {% include 'widgets/quicklinks_front.twig' %}
+                </div> <!-- #quicklinks-container -->
+
+                {% include 'modules/navigation.twig' with {'nav_obj' : global_social_nav, 'menu_class' : 'social-navigation'} %}
+
+            </div><!-- .network-header-menu -->
+
+        </div><!-- .network-utility-container -->
+    </div><!-- .network-utility -->
+    {% if not exclude_masthead %}
+        {% include 'modules/site-masthead.twig' %}
+    {% endif %}
+
+

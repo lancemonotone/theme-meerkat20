@@ -1,0 +1,28 @@
+/**
+ * This file should contain styles that will be applied to
+ * all module instances within a builder layout.
+ */
+
+@import "import";
+
+.fl-module-social .share-row span {
+    padding-right: 8px;
+    font-size: 17px;
+}
+
+.fl-module-social .share-row a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.fl-module-social .share-row a:hover {
+    color: rgba(0, 0, 0, .7);
+
+}
+
+.fl-module-social .share-row .mailto:after {
+    font-family: 'Black Tie';
+    content: '\F001';
+    font-weight: 1000;
+    vertical-align: bottom;
+}

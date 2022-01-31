@@ -1,0 +1,178 @@
+.fl-builder.full-width {
+  .site-content {
+    padding-top: 0;
+
+    .inner-container {
+      max-width: none;
+    }
+
+    #content-inner {
+      padding: 0;
+
+      #main {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.fl-row-content-wrap {
+  margin: 0;
+  padding: 0;
+}
+
+// .fl-row-bg-overlay .fl-row-content{
+//   z-index: auto;
+// }
+
+.fl-rich-text {
+  max-width: 760px;
+}
+
+body.fl-builder{ 
+   h1.page-title:not(.visuallyhidden) {
+        margin: 0 auto;
+        position: relative;
+        max-width: 1200px;
+      }
+    &.full-width{
+      h1.page-title:not(.visuallyhidden) {
+        padding: 20px 40px 20px;
+      }
+
+    }
+  }
+
+//on top of footer but not when editing
+body:not(.fl-builder-edit) .fl-row-content-wrap {
+  z-index: auto; //previously 250px
+}
+
+//page content width for use in modules
+.fixedwidth {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: block;
+  padding: 20px;
+}
+
+html.overscroll-contain #heads-up {
+  display: none;
+}
+
+blockquote {
+  margin: 0;
+  border: none;
+
+  p {
+    position: relative;
+    padding: 15px;
+    background: #eee;
+    border-radius: 5px;
+
+    &::before {
+      position: absolute;
+      left: -16px;
+      content: "\201C";
+    }
+
+    &::after {
+      content: "\201D";
+    }
+  }
+
+  footer {
+    background-color: transparent;
+  }
+}
+
+body:not(.fl-builder-edit) header {
+  background-color: #fff;
+  z-index: 99998; //one below bb editor and one below wp admin bar
+  position: relative;
+}
+
+//footer reset to bb margins
+.fl-builder .section-footer {
+  .inner-container {
+    padding: 20px 20px 0;
+  }
+}
+
+.fl-builder .site-footer {
+  .inner-container {
+    padding: 20px;
+  }
+}
+
+//sticky columns
+.sticky-wrapper .fl-col-content {
+  margin: auto;
+  display: block;
+  height: 100%;
+}
+
+.sticky-item {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+//make sure BB overlay is on top of our elements
+.mfp-bg,
+.mfp-wrap {
+  z-index: 250000;
+}
+
+
+
+/*********************
+MOBILE ZOOM 350
+*********************/
+@media only screen and (min-width: $mobile_zoom) {
+  .fl-row-bg-overlay > .fl-row-content-wrap {
+    min-height: 300px;
+  }
+}
+@media only screen and (max-width: $tablet) {
+    //m20 shift search box
+  .m20 .wms-search.wms-search-open .wms-navbox .wms-navbox-form .twitter-typeahead{
+    right: -120px;
+  }
+}
+/*********************
+TABLET
+*********************/
+@media only screen and (min-width: $tablet) {
+  .inner-container {
+     padding: 0 39px 1.75em;
+  }
+  .fl-builder.full-width {
+    .site-content {
+      .fl-builder-content-primary .fl-row.fl-row-fixed-width{
+        padding: 0 22px;
+      }
+    }
+  }
+  .fl-builder:not(.full-width){
+    .site-content{
+      .fl-builder-content{
+        position: relative;
+        left: -20px;
+      }
+    }
+
+  }
+  .fl-builder .section-footer {
+    .inner-container {
+      padding: 20px 42px 0;
+    }
+  }
+
+  .fl-builder .site-footer {
+    .inner-container {
+      padding: 20px 42px;
+    }
+  }
+  
+}

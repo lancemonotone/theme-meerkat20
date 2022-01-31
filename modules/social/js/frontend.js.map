@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/js/frontend.js"],"names":["jQuery"],"mappings":"mBAGkBA,Q","file":"frontend.js","sourcesContent":["\"use strict\";\n//import Stuff from './lib/somefile.js';\n\n(function ($) {})(jQuery);\n"],"sourceRoot":""}

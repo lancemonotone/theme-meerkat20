@@ -1,0 +1,41 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+{% set majors = post.get_field('aae_major') %}
+{% set all_majors = '' %}
+{% for major in majors %}
+    {% set all_majors = all_majors ~ major.name %}
+    {% if not loop.last %}
+      {% set all_majors = all_majors ~ ', ' %}
+    {% endif %}
+{% endfor %}
+<div class="aae-student fl-col-group">
+<style type="text/css">
+  .fl-col-small {
+    width: 50%;
+  }
+  .featherlight .featherlight-content .featherlight-inner.aae-student {
+    width: 60%;
+	margin: 1em auto;
+	display: block;
+  }
+</style>
+<div class="aae-image fl-col fl-col-small">
+<img alt="{{post.custom.aae_display_name}}" src="{{ TimberImage(post.get_field('aae_image')).src|resize(200, 300)}}" />
+  <h2 class="aae-name">{{post.custom.aae_display_name}} '{{ post.get_field('aae_graduation_year').name|slice(2,2) }}</h2>
+  <p class="aae-majors">
+  </p>
+  <p class="aae-town">{{post.custom.aae_hometown}}, {{ post.get_field('aae_state_country').name }}</p>
+  {%if post.custom.aae_receive_emails%}<p class="aae-email"><span class="dashicons dashicons-email"></span> <a href="mailto:{{post.custom.aae_alias}}@williams.edu">Contact {{post.custom.aae_display_name}}</a></p>{%endif%}
+</div>
+<div class="aae-info fl-col fl-col-small">
+  {%if all_majors %}<h3>Academic Interests</h3><div><p>{{all_majors}}</p></div>{%endif%}
+  {%if post.custom.aae_why_williams%}<h3>Why I chose Williams</h3><div><p>{{post.custom.aae_why_williams}}</p></div>{%endif%}
+  {%if post.custom.aae_meaningful_experience%}<h3>My most meaningful experience at Williams</h3><div><p>{{post.custom.aae_meaningful_experience}}</p></div>{%endif%}
+  {%if post.custom.aae_favorite_place%}<h3>My favorite place on campus</h3><div><p>{{post.custom.aae_favorite_place}}</p></div>{%endif%}
+  {%if post.custom.aae_activities%}<h3>Activities</h3><div><p>{{post.custom.aae_activities}}</p></div>{%endif%}
+  {%if post.custom.aae_hobbies%}<h3>Hobbies</h3><div><p>{{post.custom.aae_hobbies}}</p></div>{%endif%}
+</div>
+</div>
+    
+{% endblock %}

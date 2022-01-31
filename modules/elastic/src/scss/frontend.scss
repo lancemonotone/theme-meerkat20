@@ -1,0 +1,149 @@
+/**
+ * This file should contain styles that will be applied to
+ * all module instances within a builder layout.
+ */
+
+@import "import";
+
+.fl-module-elastic {
+    position: relative;
+    font-family: EphGothic;
+
+    ::-webkit-input-placeholder {
+        font-family: EphGothic;
+    }
+
+    :-moz-placeholder {
+        font-family: EphGothic;
+    }
+
+    ::-moz-placeholder {
+        font-family: EphGothic;
+    }
+
+    :-ms-input-placeholder {
+        font-family: EphGothic;
+    }
+}
+
+#elastic-wrap {
+    max-width: 767px;
+    position: relative;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+.fl-module-elastic #elastic-wrap #search-icon {
+
+    font-size: 16px;
+    line-height: 22px;
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 5000;
+}
+
+.fl-module-elastic #elastic-wrap #search-icon::before {
+    font-family: "Black Tie";
+    font-style: normal;
+    content: "\f002";
+    font-size: 16px;
+    line-height: 22px;
+    width: 36px;
+    height: 36px;
+    color: black;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+
+}
+
+.fl-module-elastic #elastic-wrap:focus-within #search-icon::before {
+    font-size: 14px;
+    content: "\F00C";
+}
+
+
+.fl-module-elastic input,
+select,
+textarea {
+    font-family: EphGothic;
+    display: block;
+    width: 100%;
+    height: calc(1.8em + .75rem + 4px);
+    padding: .375rem .75rem;
+    font-size: .95rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #584774;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+    border-radius: 0;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    max-width: 767px;
+}
+
+
+
+[type="search"] {
+    outline-offset: -2px;
+    -webkit-appearance: none;
+}
+
+#autocomplete {
+    padding-right: 40px;
+}
+
+.autocomplete-suggestions {
+    font-family: EphGothic;
+    margin-top: .5rem;
+    z-index: 2147483647;
+    border: .1px solid #000;
+    border-radius: 0;
+    background-color: #ffffff;
+    font-size: .875rem;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 500px;
+    padding: .15rem;
+    max-width: 767px;
+
+    /* handles general layout- don't change */
+    position: absolute;
+    display: none;
+
+    overflow: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.autocomplete-suggestion {
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1.02em;
+    display: block;
+    text-decoration: none;
+    color: #201a36;
+    padding: .45rem;
+    line-height: 1.5;
+}
+
+.autocomplete-suggestion b {
+    font-family: EphGothic;
+    font-weight: normal;
+    color: #FF7800;
+}
+
+.autocomplete-suggestion.selected {
+    background: #f0f0f0;
+}

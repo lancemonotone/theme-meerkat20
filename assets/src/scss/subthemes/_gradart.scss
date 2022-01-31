@@ -1,0 +1,89 @@
+/*
+Subtheme Name: gradart
+Template: m20
+*/
+
+
+body.m20-subtheme-gradart {
+    .box-shadow {
+        -webkit-box-shadow: 3px 3px 0px 0px #000000;
+        box-shadow: 3px 3px 0px 0px #000000;
+    }
+
+    .fl-post-grid-post,
+    .fl-post-column .fl-post-grid-post {
+        border: none;
+        overflow: visible;
+    }
+
+    #mainmenu {
+
+        display: none;
+        position: absolute;
+        width: 100%;
+        z-index: 1000;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+        &.visible {
+            display: block;
+        }
+    }
+
+    // people
+
+    #person-overlay {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90vw;
+        z-index: 500000000;
+        padding: 60px;
+        background-color: #ffffff;
+    }
+
+    .person-content {
+        display: flex;
+        flex-direction: column;
+        max-width: 50%;
+        margin: 0 auto;
+    }
+
+    // #person-overlay * {
+    //     pointer-events: none;
+    // }
+
+    .person {
+        cursor: pointer;
+    }
+
+    .person * {
+        pointer-events: none;
+    }
+
+    .headshot img {
+        object-fit: cover;
+        min-width: 100%;
+    }
+
+
+    footer,
+    .section-footer,
+    .section-footer a:not(.nav-link) {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    /*********************
+    TABLET 910
+    *********************/
+    @media only screen and (min-width: 910px) {
+        #person-overlay {
+
+            width: 50%;
+
+        }
+
+    }
+}
